@@ -20,6 +20,9 @@ def create_app():
     app = Flask(__name__)
 
     app.register_blueprint(user_bp)
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+    db.init_app(app)
 
     return app
 
