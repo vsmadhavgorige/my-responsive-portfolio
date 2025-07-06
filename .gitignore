@@ -1,0 +1,5 @@
+.env
+myenv
+api-logs
+__init__.py
+__pycache__
